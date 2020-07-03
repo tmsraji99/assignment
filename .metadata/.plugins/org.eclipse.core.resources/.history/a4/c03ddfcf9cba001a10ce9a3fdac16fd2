@@ -1,0 +1,6 @@
+package com.verizon.vebz.entity;
+
+public class Employee {
+
+	private Integer Id;
+}

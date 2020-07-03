@@ -1,0 +1,6 @@
+package com.verizon.vebz.entity;
+
+public class ContactDetails {
+
+	private Integer Id;
+}

@@ -1,0 +1,13 @@
+package com.verizion.photoapp.zuul;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class PhoneaccountzuulapiApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(PhoneaccountzuulapiApplication.class, args);
+	}
+
+}

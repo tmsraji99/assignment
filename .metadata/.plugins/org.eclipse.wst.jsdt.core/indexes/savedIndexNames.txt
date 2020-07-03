@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+F:\cloudmicro\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1077004568.index
+3261436521.index
+100299336.index
+2933192040.index
+1464624656.index
+3757909362.index

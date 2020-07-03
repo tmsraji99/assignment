@@ -1,0 +1,93 @@
+package com.example.demo.services;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentMatcher;
+import org.mockito.ArgumentMatchers;
+
+import com.example.demo.dao.EmployeeDaoInf;
+import com.example.demo.model.Employee;
+
+class EmployeeServiceImplTest {
+
+	@Test
+	void testGetEmailById_Positive() {
+
+		EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
+
+		EmployeeDaoInf mock2 = mock(EmployeeDaoInf.class);
+
+		when(mock2.getEmailById(101)).thenReturn("tms@raji99@");
+
+		employeeServiceImpl.setDao(mock2);
+
+		String emailById = employeeServiceImpl.getEmailById(101);
+
+		assertNotNull(emailById);
+	}
+
+	@Test
+	void testGetEmailById_Negitive() {
+
+		EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
+
+		EmployeeDaoInf mock2 = mock(EmployeeDaoInf.class);
+
+		when(mock2.getEmailById(101)).thenReturn("tms@raji99@");
+
+		employeeServiceImpl.setDao(mock2);
+
+		String emailById = employeeServiceImpl.getEmailById(102);
+
+		assertNull(emailById);
+	}
+
+	@Test
+	void testSaveEmployee_Positive() {
+		EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
+
+		EmployeeDaoInf mock2 = mock(EmployeeDaoInf.class);
+		Employee employee = new Employee();
+		employee.setDept("cse");
+		employee.setEmail("tmse@");
+
+		when(mock2.saveEmployee(employee)).thenReturn(employee);
+		employeeServiceImpl.setDao(mock2);
+
+		Employee saveEmployee = employeeServiceImpl.saveEmployee(employee);
+
+		assertEquals(saveEmployee, employee);
+	}
+
+	@Test
+	void testSaveEmployee_Negitive() {
+		EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
+
+		EmployeeDaoInf mock2 = mock(EmployeeDaoInf.class);
+		Employee employee =null;
+
+		when(mock2.saveEmployee(employee)).thenReturn(null);
+		employeeServiceImpl.setDao(mock2);
+
+		Employee saveEmployee = employeeServiceImpl.saveEmployee(employee);
+		assertNull(saveEmployee);
+	}
+
+	@Test
+	void testCheckEmailExitOrNot() {
+		EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
+		EmployeeDaoInf mock2 = mock(EmployeeDaoInf.class);
+		Employee employee = new Employee();
+		employee.setDept("cse");
+		employee.setEmail("tmse@");
+
+		when(mock2).thenReturn(null);
+		employeeServiceImpl.setDao(mock2);
+
+	}
+}

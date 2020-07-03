@@ -1,0 +1,14 @@
+package com.verizon.vebz.entity;
+
+import java.time.LocalDateTime;
+
+public class ContactDetails {
+
+	Integer contactId;
+	String contactName;
+	String contactEmail;
+	Long contactNumber;
+	LocalDateTime createdDate;
+	LocalDateTime updatedDate;
+
+}
